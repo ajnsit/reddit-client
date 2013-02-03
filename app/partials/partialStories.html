@@ -1,0 +1,36 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="span12">
+      <h2>Reddit Browser</h2>
+      <h3>{{title}} | <a href="{{links[1]}}">{{links[0]}}</a></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12 well">
+      Quick Search: <input ng-model="query"> &nbsp;&nbsp;&nbsp;
+      Sort By:
+      <select ng-model="orderProp">
+        <option value="data.created">Date</option>
+        <option value="data.title">Alphabetical</option>
+        <option value="data.score">Votes</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" ng-repeat="story in data | filter:query | orderBy:orderProp">
+    <div class="span12">
+      <div class="well">
+        <h4>{{story.data.score}}&nbsp;&nbsp; <a href="{{story.data.url}}">{{story.data.title}}</a> - <a href="#/sub/{{story.data.subreddit}}">[{{story.data.subreddit}}]</a></h4>
+        <div class="info">
+          <span class="info">&uarr; {{story.data.ups}}</span>
+          <span class="error">&darr; {{story.data.downs}}</span>
+          <a class="sub" href="#/story/{{story.data.id}}">{{story.data.num_comments}} Comments</span>
+        </div>
+      </div>
+    </div><!-- .span12 -->
+  </div><!-- .row -->
+
+</div><!-- .container-fluid -->
+

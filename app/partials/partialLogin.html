@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="span12">
+      <h2>Reddit Browser</h2>
+      <h3>Login | <a href="{{links[1]}}">{{links[0]}}</a></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset2 span8">
+      <div class="well">
+
+        <form class="form-horizontal" ng-submit="submit()">
+          <div class="control-group">
+            <label class="control-label" for="inputLogin">Login</label>
+            <div class="controls">
+              <input ng-model="user.user" type="text" id="inputLogin" placeholder="Login">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+              <input ng-model="user.passwd" type="password" id="inputPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox">
+                <input ng-model="user.rem" type="checkbox"> Remember me
+              </label>
+              <button type="submit" class="btn">Sign in</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div><!-- .span12 -->
+  </div><!-- .row -->
+
+</div><!-- .container-fluid -->
+

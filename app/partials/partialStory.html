@@ -1,0 +1,37 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="span12">
+      <h2>Reddit Browser</h2>
+      <h3>{{storydata.title}} | <a href="{{links[1]}}">{{links[0]}}</a></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <div class="well">
+        <h4>{{storydata.score}}&nbsp;&nbsp; <a href="{{storydata.url}}">{{storydata.title}}</a> - <a href="#/sub/{{storydata.subreddit}}">[{{storydata.subreddit}}]</a></h4>
+        <div class="info">
+          <span class="info">&uarr; {{storydata.ups}}</span>
+          <span class="error">&darr; {{storydata.downs}}</span>
+          <a class="sub" href="#/story/{{storydata.id}}">{{storydata.num_comments}} Comments</a></span>
+        </div>
+      </div>
+    </div><!-- .span12 -->
+  </div><!-- .row -->
+
+  <div class="row" ng-repeat="comment in data">
+    <div class="span12">
+      <div class="well">
+        <div class="info">
+          <span class="user">{{comment.data.author}}</span>
+          <span class="info">&uarr; {{comment.data.ups}}</span>
+          <span class="error">&darr; {{comment.data.downs}}</span>
+        </div>
+        <div class="body">{{comment.data.body}}</div>
+      </div>
+    </div><!-- .span12 -->
+  </div><!-- .row -->
+
+</div><!-- .container-fluid -->
+
